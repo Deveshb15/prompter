@@ -1,0 +1,1 @@
+Summarize the attached PDF in 5 bullet points for a non-technical executive. Focus on cost and timeline risks. Keep each bullet under 20 words.

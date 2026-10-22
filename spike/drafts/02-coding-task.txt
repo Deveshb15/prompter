@@ -1,0 +1,1 @@
+the login page is broken after i changed the auth middleware, users get redirected in a loop. fix it but dont touch the session store

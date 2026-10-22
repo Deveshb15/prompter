@@ -1,0 +1,6 @@
+why does this fail when i run `npm run build`?
+
+TypeError: Cannot read properties of undefined (reading 'map')
+    at ProductList (src/components/ProductList.tsx:14:22)
+
+const ProductList = ({ items }) => <ul>{items.map(i => <li key={i.id}>{i.name}</li>)}</ul>

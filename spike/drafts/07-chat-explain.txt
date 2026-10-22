@@ -1,0 +1,1 @@
+explain kubernetes like im 5

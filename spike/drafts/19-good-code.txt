@@ -1,0 +1,1 @@
+In `api/users.ts`, `getUser` returns 500 when the id is not a valid UUID. It should return 400 with `{error: "invalid id"}`. Add a test in `api/users.test.ts`. Don't change the database layer.

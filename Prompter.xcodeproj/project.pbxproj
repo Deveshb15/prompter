@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2268BA0C4A5636F004E690E9 /* TextAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602DF7F9B6A5609F31911C7C /* TextAccess.swift */; };
+		3042A29085A9EC5F4806F69D /* CLILocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5895078116AEC9331387019 /* CLILocator.swift */; };
+		32E73457A62477ECCD04827A /* CodexAppServerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A87A0BC90781E623CE38440 /* CodexAppServerProvider.swift */; };
+		34C41B86346227F667586EA1 /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D3C412D80438D5B9960F8 /* Overlay.swift */; };
+		7C1A2DDE53D2DDF3D862148C /* expand-prompt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F8336A6EAB16E557A9AF8 /* expand-prompt.txt */; };
+		7DD4EA0047429185818DD0F4 /* ClaudeCLIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEC73EFFE1A90D43B843272 /* ClaudeCLIProvider.swift */; };
+		8A9CF945A43FFC37D8605080 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF1AB2C0CE410EDE24C0ED6 /* Coordinator.swift */; };
+		90B25249D6F5BD1C3116627D /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA03F8D9CE4C7951929F992 /* CoordinatorTests.swift */; };
+		9966384175C4FFE93668309B /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 515FE77C58B31F02B8812566 /* KeyboardShortcuts */; };
+		A9D4CADE98FDD2C7ED6E7D94 /* PrompterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0476B91FD497AAE8EF40241 /* PrompterApp.swift */; };
+		B31153D54F1EFD5200CECA6F /* RewriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA34712BAD418C5A9797564 /* RewriterTests.swift */; };
+		BB2249E1872F773AAB8AD828 /* rewriter-prompt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1E2816D8CE293AF051744F63 /* rewriter-prompt.txt */; };
+		BB66BE5FF91AD9AA30C9AB36 /* ProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA86CCD173CE26E45170BE /* ProviderTests.swift */; };
+		D19BE91C4E4936723AC38AD9 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFA3662512296EBA33C6E8 /* Provider.swift */; };
+		F375D7616ADDA53756050CAA /* TextAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85739489EFD0BF4EFAE366 /* TextAccessTests.swift */; };
+		F7168E8689C109FC412AA7A2 /* Rewriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB30541C5599F06D31D3F /* Rewriter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0C86B3B27DFB1142961D35EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A301676E35D620F2AA1D1943 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B22C6B732CEBF479B8343E8;
+			remoteInfo = Prompter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A85739489EFD0BF4EFAE366 /* TextAccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAccessTests.swift; sourceTree = "<group>"; };
+		1E2816D8CE293AF051744F63 /* rewriter-prompt.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "rewriter-prompt.txt"; sourceTree = "<group>"; };
+		1FF1AB2C0CE410EDE24C0ED6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		2D4D3C412D80438D5B9960F8 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
+		4A87A0BC90781E623CE38440 /* CodexAppServerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodexAppServerProvider.swift; sourceTree = "<group>"; };
+		57AFA3662512296EBA33C6E8 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		602DF7F9B6A5609F31911C7C /* TextAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAccess.swift; sourceTree = "<group>"; };
+		8D6F8336A6EAB16E557A9AF8 /* expand-prompt.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expand-prompt.txt"; sourceTree = "<group>"; };
+		8E181D1C77995475FB2BF53D /* PrompterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrompterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4DA86CCD173CE26E45170BE /* ProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderTests.swift; sourceTree = "<group>"; };
+		AEEC73EFFE1A90D43B843272 /* ClaudeCLIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeCLIProvider.swift; sourceTree = "<group>"; };
+		AFA03F8D9CE4C7951929F992 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		B205BAF11E3CFEB14F8CE79C /* Prompter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prompter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7FFB30541C5599F06D31D3F /* Rewriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rewriter.swift; sourceTree = "<group>"; };
+		BB51F06577DEB5D7188F203C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C5895078116AEC9331387019 /* CLILocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLILocator.swift; sourceTree = "<group>"; };
+		E0476B91FD497AAE8EF40241 /* PrompterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrompterApp.swift; sourceTree = "<group>"; };
+		EBA34712BAD418C5A9797564 /* RewriterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewriterTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		39C35B749B7879C8DA78B9F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9966384175C4FFE93668309B /* KeyboardShortcuts in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		38B37FD9ACFDA637A7F21B00 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D6F8336A6EAB16E557A9AF8 /* expand-prompt.txt */,
+				1E2816D8CE293AF051744F63 /* rewriter-prompt.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		40330B872A09838EE0212702 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B205BAF11E3CFEB14F8CE79C /* Prompter.app */,
+				8E181D1C77995475FB2BF53D /* PrompterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B72788CF1A7AE68059D11E6 /* PrompterTests */ = {
+			isa = PBXGroup;
+			children = (
+				AFA03F8D9CE4C7951929F992 /* CoordinatorTests.swift */,
+				A4DA86CCD173CE26E45170BE /* ProviderTests.swift */,
+				EBA34712BAD418C5A9797564 /* RewriterTests.swift */,
+				0A85739489EFD0BF4EFAE366 /* TextAccessTests.swift */,
+			);
+			path = PrompterTests;
+			sourceTree = "<group>";
+		};
+		7118D52532258D9BE51EF25F /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				AEEC73EFFE1A90D43B843272 /* ClaudeCLIProvider.swift */,
+				C5895078116AEC9331387019 /* CLILocator.swift */,
+				4A87A0BC90781E623CE38440 /* CodexAppServerProvider.swift */,
+				57AFA3662512296EBA33C6E8 /* Provider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		8D393B7CD92DACA6AF584B47 /* Prompter */ = {
+			isa = PBXGroup;
+			children = (
+				1FF1AB2C0CE410EDE24C0ED6 /* Coordinator.swift */,
+				BB51F06577DEB5D7188F203C /* Info.plist */,
+				2D4D3C412D80438D5B9960F8 /* Overlay.swift */,
+				E0476B91FD497AAE8EF40241 /* PrompterApp.swift */,
+				B7FFB30541C5599F06D31D3F /* Rewriter.swift */,
+				602DF7F9B6A5609F31911C7C /* TextAccess.swift */,
+				7118D52532258D9BE51EF25F /* Providers */,
+				38B37FD9ACFDA637A7F21B00 /* Resources */,
+			);
+			path = Prompter;
+			sourceTree = "<group>";
+		};
+		A43230279DDB00D120EC0B6E = {
+			isa = PBXGroup;
+			children = (
+				8D393B7CD92DACA6AF584B47 /* Prompter */,
+				4B72788CF1A7AE68059D11E6 /* PrompterTests */,
+				40330B872A09838EE0212702 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B22C6B732CEBF479B8343E8 /* Prompter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E011D5F315252C153CD7AE7 /* Build configuration list for PBXNativeTarget "Prompter" */;
+			buildPhases = (
+				22244DBFBDEF89226953756E /* Sources */,
+				BB32B6FBF32DA298E8DF6F39 /* Resources */,
+				39C35B749B7879C8DA78B9F0 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Prompter;
+			packageProductDependencies = (
+				515FE77C58B31F02B8812566 /* KeyboardShortcuts */,
+			);
+			productName = Prompter;
+			productReference = B205BAF11E3CFEB14F8CE79C /* Prompter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9031E202A3607E0FC4E4A1E0 /* PrompterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA186CDB4880D0E7374A69C9 /* Build configuration list for PBXNativeTarget "PrompterTests" */;
+			buildPhases = (
+				7727709010E3EFDE9AC118E5 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9D5DA518B0C0A8B53F01EC15 /* PBXTargetDependency */,
+			);
+			name = PrompterTests;
+			packageProductDependencies = (
+			);
+			productName = PrompterTests;
+			productReference = 8E181D1C77995475FB2BF53D /* PrompterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A301676E35D620F2AA1D1943 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					6B22C6B732CEBF479B8343E8 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 916DA4F294309C3EA5E9B03E /* Build configuration list for PBXProject "Prompter" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A43230279DDB00D120EC0B6E;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D957C329BBE13F69E72A2010 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 40330B872A09838EE0212702 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B22C6B732CEBF479B8343E8 /* Prompter */,
+				9031E202A3607E0FC4E4A1E0 /* PrompterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB32B6FBF32DA298E8DF6F39 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C1A2DDE53D2DDF3D862148C /* expand-prompt.txt in Resources */,
+				BB2249E1872F773AAB8AD828 /* rewriter-prompt.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22244DBFBDEF89226953756E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3042A29085A9EC5F4806F69D /* CLILocator.swift in Sources */,
+				7DD4EA0047429185818DD0F4 /* ClaudeCLIProvider.swift in Sources */,
+				32E73457A62477ECCD04827A /* CodexAppServerProvider.swift in Sources */,
+				8A9CF945A43FFC37D8605080 /* Coordinator.swift in Sources */,
+				34C41B86346227F667586EA1 /* Overlay.swift in Sources */,
+				A9D4CADE98FDD2C7ED6E7D94 /* PrompterApp.swift in Sources */,
+				D19BE91C4E4936723AC38AD9 /* Provider.swift in Sources */,
+				F7168E8689C109FC412AA7A2 /* Rewriter.swift in Sources */,
+				2268BA0C4A5636F004E690E9 /* TextAccess.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7727709010E3EFDE9AC118E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90B25249D6F5BD1C3116627D /* CoordinatorTests.swift in Sources */,
+				BB66BE5FF91AD9AA30C9AB36 /* ProviderTests.swift in Sources */,
+				B31153D54F1EFD5200CECA6F /* RewriterTests.swift in Sources */,
+				F375D7616ADDA53756050CAA /* TextAccessTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9D5DA518B0C0A8B53F01EC15 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6B22C6B732CEBF479B8343E8 /* Prompter */;
+			targetProxy = 0C86B3B27DFB1142961D35EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		48510302E3F48CE7E7DC57B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devesh.PrompterTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prompter.app/Contents/MacOS/Prompter";
+			};
+			name = Debug;
+		};
+		6A82A16ACE2D70ADF0E4DC8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = 0BFBFD84E73C2F59834B8EA4EFB57AF52E7D19A1;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Prompter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devesh.prompter;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7094554AB645FF0031802595 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		82F49AA3B678C367C7DD38CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devesh.PrompterTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prompter.app/Contents/MacOS/Prompter";
+			};
+			name = Release;
+		};
+		9F8D7D3AF7C1E405CE04DF3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D6E6F93D9454C024A1F57F07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = 0BFBFD84E73C2F59834B8EA4EFB57AF52E7D19A1;
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Prompter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.devesh.prompter;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5E011D5F315252C153CD7AE7 /* Build configuration list for PBXNativeTarget "Prompter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A82A16ACE2D70ADF0E4DC8F /* Debug */,
+				D6E6F93D9454C024A1F57F07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		916DA4F294309C3EA5E9B03E /* Build configuration list for PBXProject "Prompter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F8D7D3AF7C1E405CE04DF3D /* Debug */,
+				7094554AB645FF0031802595 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AA186CDB4880D0E7374A69C9 /* Build configuration list for PBXNativeTarget "PrompterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48510302E3F48CE7E7DC57B4 /* Debug */,
+				82F49AA3B678C367C7DD38CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D957C329BBE13F69E72A2010 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		515FE77C58B31F02B8812566 /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D957C329BBE13F69E72A2010 /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A301676E35D620F2AA1D1943 /* Project object */;
+}

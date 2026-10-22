@@ -1,0 +1,1 @@
+i have a csv of sales with columns date, region, revenue. which region grew the most last quarter

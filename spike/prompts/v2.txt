@@ -1,0 +1,1 @@
+../../Prompter/Resources/rewriter-prompt.txt

@@ -1,0 +1,1 @@
+so basically we have this react app and the form on the signup page sometimes submits twice?? like when people double click. also the error message shows up under the wrong field sometimes. can you fix the double submit thing first, the error placement is lower priority. dont add any new libraries
