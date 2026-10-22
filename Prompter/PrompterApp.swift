@@ -32,6 +32,7 @@ private struct MenuContent: View {
         Button("Polish focused text") { state.coordinator.trigger(.polish) }
         Button("Expand focused text") { state.coordinator.trigger(.expand) }
         Divider()
+        Button("Welcome Guide…") { state.showOnboarding() }
         Button("Settings…") {
             NSApp.activate(ignoringOtherApps: true) // menu-bar apps open Settings behind other windows otherwise
             openSettings()
@@ -45,6 +46,7 @@ final class AppState: ObservableObject {
     @Published private(set) var isTrusted = AXIsProcessTrusted()
     private(set) var coordinator: Coordinator!
     private var overlay: OverlayController?
+    private let onboarding = OnboardingController()
     private var cached: (key: String, provider: Provider)?
 
     init() {
@@ -61,8 +63,10 @@ final class AppState: ObservableObject {
         overlay = OverlayController(coordinator: coordinator)
         KeyboardShortcuts.onKeyDown(for: .polish) { [weak self] in Task { @MainActor in self?.coordinator.trigger(.polish) } }
         KeyboardShortcuts.onKeyDown(for: .expand) { [weak self] in Task { @MainActor in self?.coordinator.trigger(.expand) } }
-        if !isTrusted {
-            AXIsProcessTrustedWithOptions([kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary)
+        if !UserDefaults.standard.bool(forKey: OnboardingController.seenKey) {
+            showOnboarding() // its setup step asks for Accessibility
+        } else if !isTrusted {
+            requestAccessibility(openSettings: false)
         }
         Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in
             Task { @MainActor in
@@ -71,6 +75,15 @@ final class AppState: ObservableObject {
             }
         }
         Task { _ = try? await provider() } // pre-warm so the first hotkey press is fast
+    }
+
+    func showOnboarding() { onboarding.show(state: self) }
+
+    /// Shows macOS's prompt, which adds Prompter to the Accessibility list, and opens that list when the user asked.
+    func requestAccessibility(openSettings: Bool = true) {
+        AXIsProcessTrustedWithOptions([kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true] as CFDictionary)
+        guard openSettings else { return }
+        NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!)
     }
 
     var selectedKind: ProviderKind {
@@ -102,7 +115,7 @@ final class AppState: ObservableObject {
             switch CLILocator.check(kind, override: override) {
             case .success(let binary):
                 let version = CLILocator.version(of: binary) ?? "unknown version"
-                return "✓ \(kind.displayName) \(version) at \(binary.path), logged in."
+                return "✓ \(kind.displayName) \(version) is installed and logged in."
             case .failure(let error):
                 return "✗ " + (error.errorDescription ?? "Not ready.")
             }
@@ -143,9 +156,7 @@ private struct SettingsView: View {
                     Text(state.isTrusted ? "✓ Accessibility allowed" : "✗ Accessibility not allowed yet")
                     Spacer()
                     if !state.isTrusted {
-                        Button("Open Accessibility Settings") {
-                            NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility")!)
-                        }
+                        Button("Open Accessibility Settings") { state.requestAccessibility() }
                     }
                 }
             }

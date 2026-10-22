@@ -20,9 +20,11 @@
 		B31153D54F1EFD5200CECA6F /* RewriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA34712BAD418C5A9797564 /* RewriterTests.swift */; };
 		BB2249E1872F773AAB8AD828 /* rewriter-prompt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1E2816D8CE293AF051744F63 /* rewriter-prompt.txt */; };
 		BB66BE5FF91AD9AA30C9AB36 /* ProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA86CCD173CE26E45170BE /* ProviderTests.swift */; };
+		C0812E6B611B7506B38561D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 606EA0D99E85AD59C36AEC18 /* Assets.xcassets */; };
 		D19BE91C4E4936723AC38AD9 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFA3662512296EBA33C6E8 /* Provider.swift */; };
 		F375D7616ADDA53756050CAA /* TextAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A85739489EFD0BF4EFAE366 /* TextAccessTests.swift */; };
 		F7168E8689C109FC412AA7A2 /* Rewriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFB30541C5599F06D31D3F /* Rewriter.swift */; };
+		FD6EF87579426F20B391D279 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123E4EFA486713E3CF567749 /* Onboarding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,12 +39,14 @@
 
 /* Begin PBXFileReference section */
 		0A85739489EFD0BF4EFAE366 /* TextAccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAccessTests.swift; sourceTree = "<group>"; };
+		123E4EFA486713E3CF567749 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		1E2816D8CE293AF051744F63 /* rewriter-prompt.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "rewriter-prompt.txt"; sourceTree = "<group>"; };
 		1FF1AB2C0CE410EDE24C0ED6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2D4D3C412D80438D5B9960F8 /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		4A87A0BC90781E623CE38440 /* CodexAppServerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodexAppServerProvider.swift; sourceTree = "<group>"; };
 		57AFA3662512296EBA33C6E8 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		602DF7F9B6A5609F31911C7C /* TextAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAccess.swift; sourceTree = "<group>"; };
+		606EA0D99E85AD59C36AEC18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D6F8336A6EAB16E557A9AF8 /* expand-prompt.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "expand-prompt.txt"; sourceTree = "<group>"; };
 		8E181D1C77995475FB2BF53D /* PrompterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrompterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DA86CCD173CE26E45170BE /* ProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderTests.swift; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 		38B37FD9ACFDA637A7F21B00 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				606EA0D99E85AD59C36AEC18 /* Assets.xcassets */,
 				8D6F8336A6EAB16E557A9AF8 /* expand-prompt.txt */,
 				1E2816D8CE293AF051744F63 /* rewriter-prompt.txt */,
 			);
@@ -113,6 +118,7 @@
 			children = (
 				1FF1AB2C0CE410EDE24C0ED6 /* Coordinator.swift */,
 				BB51F06577DEB5D7188F203C /* Info.plist */,
+				123E4EFA486713E3CF567749 /* Onboarding.swift */,
 				2D4D3C412D80438D5B9960F8 /* Overlay.swift */,
 				E0476B91FD497AAE8EF40241 /* PrompterApp.swift */,
 				B7FFB30541C5599F06D31D3F /* Rewriter.swift */,
@@ -215,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0812E6B611B7506B38561D4 /* Assets.xcassets in Resources */,
 				7C1A2DDE53D2DDF3D862148C /* expand-prompt.txt in Resources */,
 				BB2249E1872F773AAB8AD828 /* rewriter-prompt.txt in Resources */,
 			);
@@ -231,6 +238,7 @@
 				7DD4EA0047429185818DD0F4 /* ClaudeCLIProvider.swift in Sources */,
 				32E73457A62477ECCD04827A /* CodexAppServerProvider.swift in Sources */,
 				8A9CF945A43FFC37D8605080 /* Coordinator.swift in Sources */,
+				FD6EF87579426F20B391D279 /* Onboarding.swift in Sources */,
 				34C41B86346227F667586EA1 /* Overlay.swift in Sources */,
 				A9D4CADE98FDD2C7ED6E7D94 /* PrompterApp.swift in Sources */,
 				D19BE91C4E4936723AC38AD9 /* Provider.swift in Sources */,
@@ -438,6 +446,7 @@
 				CODE_SIGN_IDENTITY = 0BFBFD84E73C2F59834B8EA4EFB57AF52E7D19A1;
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Prompter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
