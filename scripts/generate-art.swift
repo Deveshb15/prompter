@@ -1,5 +1,5 @@
 #!/usr/bin/env swift
-// Draws Prompter's art: rough text lines tidied into a prompt, with a lime spark.
+// Draws Prompter's art: a glowing lime `>_` prompt, and the DMG window background.
 //
 //   swift scripts/generate-art.swift
 //       writes the app icon, at every size, into the asset catalog.
@@ -26,34 +26,33 @@ func writePNG(_ image: CGImage, to url: URL) throws {
     try NSBitmapImageRep(cgImage: image).representation(using: .png, properties: [:])!.write(to: url)
 }
 
-/// A four-point spark centred on `c`.
-func spark(_ ctx: CGContext, at c: CGPoint, radius r: CGFloat, color: CGColor) {
-    let w = r * 0.26
-    let path = CGMutablePath()
-    path.move(to: CGPoint(x: c.x, y: c.y + r))
-    path.addQuadCurve(to: CGPoint(x: c.x + r, y: c.y), control: CGPoint(x: c.x + w, y: c.y + w))
-    path.addQuadCurve(to: CGPoint(x: c.x, y: c.y - r), control: CGPoint(x: c.x + w, y: c.y - w))
-    path.addQuadCurve(to: CGPoint(x: c.x - r, y: c.y), control: CGPoint(x: c.x - w, y: c.y - w))
-    path.addQuadCurve(to: CGPoint(x: c.x, y: c.y + r), control: CGPoint(x: c.x - w, y: c.y + w))
-    ctx.addPath(path)
-    ctx.setFillColor(color)
-    ctx.fillPath()
-}
-
-func bar(_ ctx: CGContext, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, color: CGColor) {
-    ctx.addPath(CGPath(roundedRect: CGRect(x: x, y: y, width: width, height: height),
-                       cornerWidth: height / 2, cornerHeight: height / 2, transform: nil))
-    ctx.setFillColor(color)
-    ctx.fillPath()
-}
-
 // MARK: - App icon
 
+/// macOS's continuous-corner icon shape: a superellipse (n = 5) filling 80% of the canvas, in 0–100 units.
+func squircle() -> CGPath {
+    let path = CGMutablePath()
+    for i in 0...144 {
+        let t = Double(i) / 144 * 2 * .pi, c = cos(t), s = sin(t)
+        let p = CGPoint(x: 50 + 40 * (c < 0 ? -1 : 1) * pow(abs(c), 0.4), y: 50 + 40 * (s < 0 ? -1 : 1) * pow(abs(s), 0.4))
+        i == 0 ? path.move(to: p) : path.addLine(to: p)
+    }
+    path.closeSubpath()
+    return path
+}
+
+func gradient(_ stops: [(CGFloat, CGColor)]) -> CGGradient {
+    CGGradient(colorsSpace: CGColorSpace(name: CGColorSpace.sRGB)!,
+               colors: stops.map(\.1) as CFArray, locations: stops.map(\.0))!
+}
+
+/// "Phosphor": a lime `>_` prompt glowing like an old terminal, on near-black with faint scanlines.
 func iconImage() -> CGImage {
-    // macOS icon grid: an 824 px rounded square centred on a 1024 canvas, drawn here because macOS 14 doesn't mask it.
-    let body = CGRect(x: 100, y: 100, width: 824, height: 824)
     let ctx = context(1024, 1024)
-    let shape = CGPath(roundedRect: body, cornerWidth: 185, cornerHeight: 185, transform: nil)
+    // Draw in 0–100 units with y pointing down, like the SVG mockup. Shadow offsets ignore this transform.
+    ctx.translateBy(x: 0, y: 1024)
+    ctx.scaleBy(x: 10.24, y: -10.24)
+    let shape = squircle()
+    let top = CGPoint(x: 50, y: 10), bottom = CGPoint(x: 50, y: 90)
 
     ctx.saveGState()
     ctx.setShadow(offset: CGSize(width: 0, height: -10), blur: 28, color: rgb(0, 0, 0, 0.35))
@@ -65,23 +64,43 @@ func iconImage() -> CGImage {
     ctx.saveGState()
     ctx.addPath(shape)
     ctx.clip()
-    let gradient = CGGradient(colorsSpace: CGColorSpace(name: CGColorSpace.sRGB)!,
-                              colors: [rgb(0.17, 0.17, 0.19), rgb(0.06, 0.06, 0.07)] as CFArray, locations: [0, 1])!
-    ctx.drawLinearGradient(gradient, start: CGPoint(x: 512, y: 924), end: CGPoint(x: 512, y: 100), options: [])
-    // Three lines of a prompt: two settled white lines, the last one lime because it was just rewritten.
-    bar(ctx, x: 236, y: 560, width: 420, height: 64, color: rgb(1, 1, 1, 0.92))
-    bar(ctx, x: 236, y: 452, width: 330, height: 64, color: rgb(1, 1, 1, 0.55))
-    bar(ctx, x: 236, y: 344, width: 230, height: 64, color: lime)
-    // Text caret after the last line.
-    bar(ctx, x: 500, y: 320, width: 22, height: 112, color: lime)
-    spark(ctx, at: CGPoint(x: 726, y: 700), radius: 112, color: lime)
-    spark(ctx, at: CGPoint(x: 806, y: 556), radius: 46, color: rgb(0.80, 0.96, 0.40, 0.7))
+    ctx.drawLinearGradient(gradient([(0, rgb(0.086, 0.094, 0.102)), (1, rgb(0.02, 0.02, 0.024))]), start: top, end: bottom, options: [])
+    ctx.setStrokeColor(rgb(0.80, 0.96, 0.40, 0.02))
+    ctx.setLineWidth(1)
+    for y in stride(from: 30, through: 78, by: 12) {
+        ctx.move(to: CGPoint(x: 20, y: y))
+        ctx.addLine(to: CGPoint(x: 80, y: y))
+    }
+    ctx.strokePath()
+
+    // The prompt, drawn four times: three glow passes, then the crisp shape on top.
+    let glyph = CGMutablePath()
+    glyph.move(to: CGPoint(x: 29.5, y: 35.5))
+    glyph.addLine(to: CGPoint(x: 44.5, y: 50))
+    glyph.addLine(to: CGPoint(x: 29.5, y: 64.5))
+    let prompt = CGMutablePath()
+    prompt.addPath(glyph.copy(strokingWithWidth: 7, lineCap: .round, lineJoin: .round, miterLimit: 10))
+    prompt.addPath(CGPath(roundedRect: CGRect(x: 51, y: 59.5, width: 19, height: 6.5), cornerWidth: 3.25, cornerHeight: 3.25, transform: nil))
+    for blur in [90, 44, 44, 0] as [CGFloat] {
+        ctx.saveGState()
+        if blur > 0 { ctx.setShadow(offset: .zero, blur: blur, color: lime) }
+        ctx.addPath(prompt)
+        ctx.setFillColor(lime)
+        ctx.fillPath()
+        ctx.restoreGState()
+    }
+
+    // Glassy top sheen.
+    ctx.drawLinearGradient(gradient([(0, rgb(1, 1, 1, 0.16)), (0.45, rgb(1, 1, 1, 0))]), start: top, end: bottom, options: [])
     ctx.restoreGState()
 
-    ctx.addPath(shape)
-    ctx.setStrokeColor(rgb(1, 1, 1, 0.10))
-    ctx.setLineWidth(3)
-    ctx.strokePath()
+    // Rim light: bright along the top edge, faint around the rest.
+    ctx.saveGState()
+    ctx.addPath(shape.copy(strokingWithWidth: 0.8, lineCap: .butt, lineJoin: .round, miterLimit: 10))
+    ctx.clip()
+    ctx.drawLinearGradient(gradient([(0, rgb(1, 1, 1, 0.35)), (0.5, rgb(1, 1, 1, 0.04)), (1, rgb(1, 1, 1, 0.10))]),
+                           start: top, end: bottom, options: [])
+    ctx.restoreGState()
     return ctx.makeImage()!
 }
 
